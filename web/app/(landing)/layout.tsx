@@ -4,6 +4,15 @@ import "../globals.css";
 import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import AnimatedGradientText from "@/components/AnimatedGradientText";
+import { Input } from "@/components/ui/input";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="dark" lang="en">
+    <html lang="en">
       <body
         className={`relative min-h-screen bg-background ${inter.className}`}
       >
@@ -52,15 +61,54 @@ export default function RootLayout({
                   Discover with AI, Read with Joy.
                 </p>
               </div>
+              <AnimatedGradientText className="mt-14 text-gray-100">
+                Get Personalized Book Recommendations—Try it out!
+              </AnimatedGradientText>
+              <label className="relative mx-auto mt-8 block h-12 max-w-xl">
+                <Input
+                  className="h-full rounded-lg pr-28 text-gray-100"
+                  placeholder="Need a book recommendation? Ask here…"
+                />
+                <Button
+                  size="sm"
+                  className="absolute right-2 top-1/2 w-24 -translate-y-1/2 rounded-sm px-0 font-semibold text-gray-100"
+                >
+                  Generate
+                </Button>
+              </label>
             </div>
-            <AnimatedGradientText className="mt-14 text-gray-100">
-              Get Personalized Book Recommendations—Try it out!
-            </AnimatedGradientText>
+            <div className="mx-auto mt-14 max-w-7xl">
+              <h3 className="mb-4 text-center text-lg font-semibold text-gray-200">
+                Need Help? Try an Example Prompt
+              </h3>
+              <div className="grid grid-cols-4 gap-4">
+                <ExamplePrompt />
+                <ExamplePrompt />
+                <ExamplePrompt />
+                <ExamplePrompt />
+              </div>
+            </div>
           </div>
-
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         </div>
       </body>
     </html>
+  );
+}
+
+function ExamplePrompt() {
+  return (
+    <Card className="border-muted text-gray-200">
+      <CardHeader className="p-4">
+        <p className="text-center text-sm">
+          Recommend a science fiction book with space exploration.
+        </p>
+      </CardHeader>
+      <CardFooter className="p-4 pt-0">
+        <Button className="mx-auto w-1/2 text-sm" variant="outline">
+          Ask this
+        </Button>
+      </CardFooter>
+    </Card>
   );
 }
