@@ -17,7 +17,7 @@ export default function AnimatedGradientText({
       )}
     >
       <div
-        className={`animate-gradient absolute inset-0 block h-full w-full bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:var(--bg-size)_100%] p-[1px] [border-radius:inherit] ![mask-composite:subtract] [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)]`}
+        className={`animate-gradient absolute inset-0 block h-full w-full bg-gradient-to-r from-[#6d28d9]/50 via-[hsl(217.2,91.2%,59.8%)]/50 to-[#6d28d9]/50 bg-[length:var(--bg-size)_100%] p-[1px] [border-radius:inherit] ![mask-composite:subtract] [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)]`}
       />
 
       {children}
