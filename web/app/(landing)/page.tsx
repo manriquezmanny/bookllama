@@ -22,7 +22,7 @@ export default function Home() {
               </Link>
               <Link
                 className="grid place-content-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-gray-100 transition-colors hover:bg-primary/90"
-                href="/auth/login"
+                href="/auth/signup"
               >
                 Sign up
               </Link>
